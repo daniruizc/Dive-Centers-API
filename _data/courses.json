@@ -1,0 +1,82 @@
+[
+	{
+		"_id": "5d725a4a7b292f5f8ceff789",
+		"title": "Open Water Diver",
+		"description": "The PADI Open Water Diver course teaches you the basic knowledge and fundamental skills to dive with a partner independently at a maximum recommended depth of 18m anywhere in the world.",
+		"days": 1,
+		"price": 350,
+		"minimumSkill": "beginner",
+		"diveCenter": "5d713995b721c3bb38c1f5d0",
+		"user": "5d7a514b5d2c12c7449be045"
+	},
+	{
+		"_id": "5d725c84c4ded7bcb480eaa0",
+		"title": "Advanced Open Water Diver",
+		"description": "The PADI Advanced Open Water Diver course allows you to move forward in diving once you feel comfortable with basic skills. With the AOWD course you will overcome new tasks, travel in diverse environments and experience new adventures.",
+		"days": 1,
+		"price": 300,
+		"minimumSkill": "intermediate",
+		"diveCenter": "5d713995b721c3bb38c1f5d0",
+		"user": "5d7a514b5d2c12c7449be045"
+	},
+	{
+		"_id": "5d725cb9c4ded7bcb480eaa1",
+		"title": "Open Water Diver",
+		"description": "The PADI Open Water Diver course teaches you the basic knowledge and fundamental skills to dive with a partner independently at a maximum recommended depth of 18m anywhere in the world.",
+		"days": 1,
+		"price": 365,
+		"minimumSkill": "beginner",
+		"diveCenter": "5d713a66ec8f2b88b8f830b8",
+		"user": "5d7a514b5d2c12c7449be046"
+	},
+	{
+		"_id": "5d725cd2c4ded7bcb480eaa2",
+		"title": "Rescue Diver",
+		"description": "The Rescue Diver course teaches you to look beyond yourself to consider the safety and well-being of other divers. With this course, you will expand the basic techniques of problem prevention and accident management and prepare you to handle more complex diving emergencies and apply direct intervention techniques to help your colleagues in case of emergency.",
+		"days": 2,
+		"price": 500,
+		"minimumSkill": "intermediate",
+		"diveCenter": "5d713a66ec8f2b88b8f830b8",
+		"user": "5d7a514b5d2c12c7449be046"
+	},
+	{
+		"_id": "5d725ce8c4ded7bcb480eaa3",
+		"title": "Open Water Diver",
+		"description": "The PADI Open Water Diver course teaches you the basic knowledge and fundamental skills to dive with a partner independently at a maximum recommended depth of 18m anywhere in the world.",
+		"days": 1,
+		"price": 335,
+		"minimumSkill": "beginner",
+		"diveCenter": "5d725a037b292f5f8ceff787",
+		"user": "5c8a1d5b0190b214360dc031"
+	},
+	{
+		"_id": "5d725cfec4ded7bcb480eaa4",
+		"title": "Dive Master",
+		"description": "The PADI Divemaster course focuses into problem solving skills and extends its application from accident management and prevention to supervising situations with certified students and divers. You will develop the attitude of adequate leadership and prepare yourself to make the right decisions.",
+		"days": 3,
+		"price": 600,
+		"minimumSkill": "advanced",
+		"diveCenter": "5d725a037b292f5f8ceff787",
+		"user": "5c8a1d5b0190b214360dc031"
+	},
+	{
+		"_id": "5d725cfec4ded7bcb480eaa5",
+		"title": "Open Water Diver",
+		"description": "The PADI Open Water Diver course teaches you the basic knowledge and fundamental skills to dive with a partner independently at a maximum recommended depth of 18m anywhere in the world.",
+		"days": 1,
+		"price": 345,
+		"minimumSkill": "beginner",
+		"diveCenter": "5d725a1b7b292f5f8ceff788",
+		"user": "5c8a1d5b0190b214360dc032"
+	},
+	{
+		"_id": "5d725cfec4ded7bcb480eaa6",
+		"title": "Instructor Course",
+		"description": "The IDC (Instructor Development Course) prepares you to become a PADI diving instructor. In addition to ensuring a high level of knowledge in diving, it provides future instructors with the keys to successfully teach the different PADI courses up to the Divemaster level.",
+		"days": 7,
+		"price": 1700,
+		"minimumSkill": "advanced",
+		"diveCenter": "5d725a1b7b292f5f8ceff788",
+		"user": "5c8a1d5b0190b214360dc032"
+	}
+]

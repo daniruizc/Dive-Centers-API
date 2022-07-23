@@ -1,17 +1,34 @@
 {
-  "name": "devcamper_api",
+  "name": "divecenters_api",
   "version": "0.0.0",
-  "description": "DevCamper Backend API",
+  "description": "DiveCenters Backend API",
   "main": "server.js",
+  "type": "module",
   "scripts": {
     "start": "NODE_ENV=production node server",
-    "dev": "nodemon server"
+    "dev": "nodemon -L server"
   },
   "author": "Daniel Ruiz",
   "license": "MIT",
   "dependencies": {
+    "bcryptjs": "^2.4.3",
+    "colors": "^1.4.0",
+    "cookie-parser": "^1.4.6",
+    "cors": "^2.8.5",
     "dotenv": "^16.0.1",
-    "express": "^4.18.1"
+    "express": "^4.18.1",
+    "express-fileupload": "^1.4.0",
+    "express-mongo-sanitize": "^2.2.0",
+    "express-rate-limit": "^6.4.0",
+    "helmet": "^5.1.0",
+    "hpp": "^0.2.3",
+    "jsonwebtoken": "^8.5.1",
+    "mongoose": "^6.4.4",
+    "morgan": "^1.10.0",
+    "node-geocoder": "^4.1.0",
+    "nodemailer": "^6.7.7",
+    "slugify": "^1.6.5",
+    "xss-clean": "^0.1.1"
   },
   "devDependencies": {
     "nodemon": "^2.0.19"

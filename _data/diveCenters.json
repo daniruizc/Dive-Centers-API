@@ -1,0 +1,58 @@
+[
+    {
+        "_id": "5d713995b721c3bb38c1f5d0",
+        "user": "5d7a514b5d2c12c7449be045",
+        "name": "Buceo Hispania",
+        "description": "Come to dive in Barcelona! We are the only PADI 5 Star dive center that offers all activities entirely in the city. Take advantage of this great comfort and do not stay without diving.",
+        "website": "https://buceohispaniabarcelona.com/",
+        "phone": "685 33 77 88",
+        "email": "dive@buceohispania.com",
+        "address": "Moll de Gregal s/n, Panyol 1 Port Olímpic 08005-Barcelona, 08005 Barcelona",
+        "specialties": [
+            "Open Water Diver",
+            "Advanced Open Water Diver"
+        ]
+    },
+    {
+        "_id": "5d713a66ec8f2b88b8f830b8",
+        "user": "5d7a514b5d2c12c7449be046",
+        "name": "Posidonia Dive",
+        "description": "At all times we offer you an environment where friendship, companionship and customer service prevail as a premise. We are distinguished by a clear orientation to service and teaching, with the aim of having fun and that you have fun learning and diving. We are a human team made up of passionate divers; If to this you also add luxury facilities that do not lack a detail, everything together will make your stay with us unforgettable.",
+        "website": "http://www.posidoniadive.com/",
+        "phone": "699 54 28 87",
+        "email": "dive@posidoniadive.com",
+        "address": "Port Balís, 08392 Sant Andreu de Llavaneres, Barcelona",
+        "specialties": [
+            "Open Water Diver",
+            "Rescue Diver"
+        ]
+    },
+    {
+        "_id": "5d725a037b292f5f8ceff787",
+        "user": "5c8a1d5b0190b214360dc031",
+        "name": "H2O Diving Center",
+        "description": "The dive in the Costa Brava is spectacular, full of life. The diver may encounter moonfishes, barracudas, conger eels and morays, great banks of two-banded sea breams and damselfish, gilthead, imperial breams, lobsters, nudibranchs ... and in winter, monkfishes and Zeus faber fishes... Are you going to miss it?",
+        "website": "http://www.h2odivingcenter.com/",
+        "phone": "972 31 31 69",
+        "email": "dive@h2odivingcenter.com",
+        "address": "Port Esportiu Marina, Carrer Voramar, Local 2, 17230 Palamós, Girona",
+        "specialties": [
+            "Open Water Diver",
+            "Dive Master"
+        ]
+    },
+    {
+        "_id": "5d725a1b7b292f5f8ceff788",
+        "user": "5c8a1d5b0190b214360dc032",
+        "name": "Diversub - Escola de submarinisme",
+        "description": "Discover the underwater world or follow your training, in some of the courses we offer, in a fun and safe way in a seafront facility, where you can listen to the previous explanations in a quiet environment and spectacular views.",
+        "website": "http://www.diversub.net/",
+        "phone": "609 40 57 99",
+        "email": "dive@diversub.com",
+        "address": "Av. Andorra, 13, 17251 Calonge, Girona",
+        "specialties": [
+            "Open Water Diver",
+            "Instructor Course"
+        ]
+    }
+]
