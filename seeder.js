@@ -1,13 +1,10 @@
 import fs from 'fs';
 import mongoose from 'mongoose';
 import colors from 'colors';
-import dotenv from 'dotenv';
+import 'dotenv/config';
 import path from 'path';
 import { fileURLToPath } from 'url';
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
-
-// Load env vars
-dotenv.config({ path: './config/config.env' });
 
 // Load models
 import DiveCenter from './models/DiveCenter.js';
