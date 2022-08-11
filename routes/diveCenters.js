@@ -16,10 +16,16 @@ import DiveCenter from '../models/DiveCenter.js';
 import { router as courseRouter } from './courses.js';
 import { router as reviewsRouter } from './reviews.js';
 
-const router = express.Router();
-
 import advancedResults from '../middleware/advancedResults.js';
 import { protect, authorize } from '../middleware/auth.js';
+
+import validate from '../middleware/validate.js';
+import {
+    diveCenterSchema,
+    diveCenterOptionalSchema
+} from '../validationSchemas/diveCenters.js';
+
+const router = express.Router();
 
 // Re-route into other resource routers
 router.use('/:diveCenterId/courses', courseRouter);
@@ -36,12 +42,12 @@ router
 router
     .route('/')
     .get(advancedResults(DiveCenter, 'courses'), getDiveCenters)
-    .post(protect, authorize('publisher', 'admin'), createDiveCenter);
+    .post(protect, authorize('publisher', 'admin'), validate(diveCenterSchema), createDiveCenter);
 
 router
     .route('/:id')
     .get(getDiveCenter)
-    .put(protect, authorize('publisher', 'admin'), updateDiveCenter)
+    .put(protect, authorize('publisher', 'admin'), validate(diveCenterOptionalSchema), updateDiveCenter)
     .delete(protect, authorize('publisher', 'admin'), deleteDiveCenter);
 
 

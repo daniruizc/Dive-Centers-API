@@ -9,20 +9,26 @@ import {
 } from '../controllers/reviews.js';
 import Review from '../models/Review.js';
 
-const router = express.Router({ mergeParams: true });
-
 import advancedResults from '../middleware/advancedResults.js';
 import { protect, authorize } from '../middleware/auth.js';
+
+import validate from '../middleware/validate.js';
+import {
+    reviewSchema,
+    reviewOptionalSchema
+} from '../validationSchemas/reviews.js';
+
+const router = express.Router({ mergeParams: true });
 
 router
     .route('/')
     .get(advancedResults(Review, { path: 'diveCenter', select: 'name description' }), getReviews)
-    .post(protect, authorize('user', 'admin'), addReview);
+    .post(protect, authorize('user', 'admin'), validate(reviewSchema), addReview);
 
 router
     .route('/:id')
     .get(getReview)
-    .put(protect, authorize('user', 'admin'), updateReview)
+    .put(protect, authorize('user', 'admin'), validate(reviewOptionalSchema), updateReview)
     .delete(protect, authorize('user', 'admin'), deleteReview);
 
 router.use(notFound);

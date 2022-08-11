@@ -9,19 +9,23 @@ import {
     updateDetails,
     updatePassword
 } from '../controllers/auth.js';
+import { protect } from '../middleware/auth.js';
+
+import validate from '../middleware/validate.js';
 import {
-    protect
-} from '../middleware/auth.js';
+    userSchema,
+    userOptionalSchema
+} from '../validationSchemas/users.js';
 
 const router = express.Router();
 
 router
-    .post('/register', register)
+    .post('/register', validate(userSchema), register)
     .post('/login', login)
     .get('/logout', logout)
     .get('/me', protect, getMe)
-    .put('/updatedetails', protect, updateDetails)
-    .put('/updatepassword', protect, updatePassword)
+    .put('/updatedetails', protect, validate(userOptionalSchema), updateDetails)
+    .put('/updatepassword', protect, validate(userOptionalSchema), updatePassword)
     .post('/forgotpassword', forgotPassword)
     .put('/resetpassword/:resettoken', resetPassword);
 

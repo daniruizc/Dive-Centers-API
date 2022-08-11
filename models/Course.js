@@ -11,7 +11,7 @@ const CourseSchema = new mongoose.Schema({
         required: [true, 'Please add a description']
     },
     days: {
-        type: String,
+        type: Number,
         required: [true, 'Please add number of days']
     },
     price: {
