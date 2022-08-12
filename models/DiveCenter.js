@@ -1,6 +1,8 @@
 import mongoose from 'mongoose';
 import slugify from 'slugify';
 import geocoder from '../utils/geocoder.js';
+import { checkIdExists } from './validate.js';
+import User from './User.js';
 
 
 const DiveCenterSchema = new mongoose.Schema({
@@ -78,7 +80,11 @@ const DiveCenterSchema = new mongoose.Schema({
     user: {
         type: mongoose.Schema.ObjectId,
         ref: 'User',
-        required: true
+        required: true,
+        validate: {
+            validator: async (id) => await checkIdExists(id, User),
+            message: (props) => `${props.path} not found with id of ${props.value}`
+        }
     }
 }, {
     toJSON: { virtuals: true },

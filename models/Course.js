@@ -1,4 +1,7 @@
 import mongoose from "mongoose";
+import { checkIdExists } from './validate.js';
+import DiveCenter from './DiveCenter.js';
+import User from './User.js';
 
 const CourseSchema = new mongoose.Schema({
     title: {
@@ -30,12 +33,20 @@ const CourseSchema = new mongoose.Schema({
     diveCenter: {
         type: mongoose.Schema.ObjectId,
         ref: 'DiveCenter',
-        required: true
+        required: true,
+        validate: {
+            validator: async (id) => await checkIdExists(id, DiveCenter),
+            message: (props) => `${props.path} not found with id of ${props.value}`
+        }
     },
     user: {
         type: mongoose.Schema.ObjectId,
         ref: 'User',
-        required: true
+        required: true,
+        validate: {
+            validator: async (id) => await checkIdExists(id, User),
+            message: (props) => `${props.path} not found with id of ${props.value}`
+        }
     }
 });
 
