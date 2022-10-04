@@ -1,6 +1,6 @@
 const advancedResults = (model, populate) => async (req, res, next) => {
     let query;
-    
+
     // Copy req.query
     const reqQuery = { ...req.query };
 
@@ -20,13 +20,13 @@ const advancedResults = (model, populate) => async (req, res, next) => {
     query = model.find(JSON.parse(queryStr));
 
     // Select Fields
-    if(req.query.select) {
+    if (req.query.select) {
         const fields = req.query.select.split(',').join(' ');
         query = query.select(fields);
     }
 
     // Sort
-    if(req.query.sort) {
+    if (req.query.sort) {
         const sortBy = req.query.sort.split(',').join(' ');
         query = query.sort(sortBy);
     } else {

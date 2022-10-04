@@ -19,7 +19,7 @@ export const getDiveCenter = asyncHandler(async (req, res, next) => {
     if (!diveCenter) {
         return next(new ErrorResponse(`DiveCenter not found with id of ${req.params.id}`, 404));
     }
-    res.status(200).json({ sucess: true, data: diveCenter });
+    res.status(200).json({ success: true, data: diveCenter });
 })
 
 // @desc    Create new diveCenter
@@ -61,7 +61,7 @@ export const updateDiveCenter = asyncHandler(async (req, res, next) => {
         runValidators: true
     });
 
-    res.status(200).json({ sucess: true, data: diveCenter });
+    res.status(200).json({ success: true, data: diveCenter });
 })
 
 // @desc    Delete diveCenter
@@ -80,7 +80,7 @@ export const deleteDiveCenter = asyncHandler(async (req, res, next) => {
 
     diveCenter.remove();
 
-    res.status(200).json({ sucess: true, data: {} });
+    res.status(200).json({ success: true, data: {} });
 })
 
 // @desc    Get diveCenters within a radius
@@ -99,13 +99,11 @@ export const getDiveCentersInRadius = asyncHandler(async (req, res, next) => {
     // Earth Radius = 3,963 mi / 6,378 km
     const radius = distance / 3963;
 
-    console.log(lat, lng, radius);
-
     const diveCenters = await DiveCenter.find({
         location: { $geoWithin: { $centerSphere: [[lng, lat], radius] } }
     });
 
-    res.status(200).json({ sucess: true, count: diveCenters.length, data: diveCenters });
+    res.status(200).json({ success: true, count: diveCenters.length, data: diveCenters });
 })
 
 // @desc    Upload photo for diveCenter
@@ -143,12 +141,11 @@ export const diveCenterPhotoUpload = asyncHandler(async (req, res, next) => {
 
     file.mv(`${process.env.FILE_UPLOAD_PATH}/${file.name}`, async err => {
         if (err) {
-            console.error(err);
             return next(new ErrorResponse(`Problem with file upload`, 500));
         }
 
         await DiveCenter.findByIdAndUpdate(req.params.id, { photo: file.name });
 
-        res.status(200).json({ sucess: true, data: file.name });
+        res.status(200).json({ success: true, data: file.name });
     });
 })

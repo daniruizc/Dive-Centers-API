@@ -77,8 +77,8 @@ ReviewSchema.post('save', function () {
 });
 
 // Call getAverageRating before remove
-ReviewSchema.pre('remove', function (next) {
-    this.constructor.getAverageRating(this.diveCenter);
+ReviewSchema.pre('remove', async function (next) {
+    await this.constructor.getAverageRating(this.diveCenter);
     next();
 });
 

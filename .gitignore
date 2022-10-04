@@ -2,3 +2,4 @@ vagrant_envs/
 node_modules/
 .env
 log/
+coverage/

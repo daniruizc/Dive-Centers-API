@@ -7,7 +7,8 @@ const CourseSchema = new mongoose.Schema({
     title: {
         type: String,
         trim: true,
-        required: [true, 'Please add a course title']
+        required: [true, 'Please add a course title'],
+        index: true
     },
     description: {
         type: String,
@@ -37,7 +38,8 @@ const CourseSchema = new mongoose.Schema({
         validate: {
             validator: async (id) => await checkIdExists(id, DiveCenter),
             message: (props) => `${props.path} not found with id of ${props.value}`
-        }
+        },
+        index: true
     },
     user: {
         type: mongoose.Schema.ObjectId,
@@ -46,9 +48,12 @@ const CourseSchema = new mongoose.Schema({
         validate: {
             validator: async (id) => await checkIdExists(id, User),
             message: (props) => `${props.path} not found with id of ${props.value}`
-        }
+        },
+        index: true
     }
 });
+
+CourseSchema.index({ diveCenter: 1, user: 1 });
 
 // Static method to get avg of course prices
 CourseSchema.statics.getAverageCost = async function (diveCenterId) {
@@ -80,8 +85,8 @@ CourseSchema.post('save', function () {
 });
 
 // Call getAverageCost before remove
-CourseSchema.pre('remove', function (next) {
-    this.constructor.getAverageCost(this.diveCenter);
+CourseSchema.pre('remove', async function (next) {
+    await this.constructor.getAverageCost(this.diveCenter);
     next();
 });
 

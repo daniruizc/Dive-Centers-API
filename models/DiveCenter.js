@@ -68,7 +68,10 @@ const DiveCenterSchema = new mongoose.Schema({
         min: [1, 'Rating must be at least 1'],
         max: [10, 'Rating can not be more than 1']
     },
-    averageCost: Number,
+    averageCost: {
+        type: Number,
+        default: 0
+    },
     photo: {
         type: String,
         default: 'no-photo.jpg'
@@ -84,7 +87,8 @@ const DiveCenterSchema = new mongoose.Schema({
         validate: {
             validator: async (id) => await checkIdExists(id, User),
             message: (props) => `${props.path} not found with id of ${props.value}`
-        }
+        },
+        index: true
     }
 }, {
     toJSON: { virtuals: true },

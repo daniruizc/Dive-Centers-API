@@ -26,7 +26,7 @@ router
     .get('/me', protect, getMe)
     .put('/updatedetails', protect, validate(userOptionalSchema), updateDetails)
     .put('/updatepassword', protect, validate(userOptionalSchema), updatePassword)
-    .post('/forgotpassword', forgotPassword)
+    .post('/forgotpassword', validate(userOptionalSchema), forgotPassword)
     .put('/resetpassword/:resettoken', resetPassword);
 
 export { router };

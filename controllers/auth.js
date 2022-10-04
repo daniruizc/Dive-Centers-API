@@ -2,7 +2,7 @@ import crypto from 'crypto';
 import ErrorResponse from '../utils/errorResponse.js';
 import asyncHandler from '../middleware/async.js';
 import User from '../models/User.js';
-import sendEmail from '../utils/sendEmail.js';
+import { sendEmail } from '../utils/sendEmail.js';
 
 // @desc    Register user
 // @route   POST /api/v1/auth/register
@@ -106,7 +106,7 @@ export const forgotPassword = asyncHandler(async (req, res, next) => {
     const user = await User.findOne({ email: req.body.email });
 
     if (!user) {
-        return next(new ErrorResponse(`There is no user with email ${req.body.email}`, 404));
+        return next(new ErrorResponse(`User not found with email ${req.body.email}`, 404));
     }
 
     // Get reset token

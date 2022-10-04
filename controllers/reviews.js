@@ -26,7 +26,7 @@ export const getReview = asyncHandler(async (req, res, next) => {
     });
 
     if (!review) {
-        return next(new ErrorResponse(`No review found with the id of ${req.params.id}`, 404));
+        return next(new ErrorResponse(`Review not found with the id of ${req.params.id}`, 404));
     }
 
     res.status(200).json({ success: true, data: review });
@@ -42,7 +42,7 @@ export const addReview = asyncHandler(async (req, res, next) => {
     const diveCenter = await DiveCenter.findById(req.params.diveCenterId);
 
     if (!diveCenter) {
-        return next(new ErrorResponse(`No diveCenter with the id of ${req.params.diveCenterId}`, 404));
+        return next(new ErrorResponse(`diveCenter not found with the id of ${req.params.diveCenterId}`, 404));
     }
 
     const review = await Review.create(req.body);
@@ -57,7 +57,7 @@ export const updateReview = asyncHandler(async (req, res, next) => {
     let review = await Review.findById(req.params.id);
 
     if (!review) {
-        return next(new ErrorResponse(`No review with the id of ${req.params.id}`, 404));
+        return next(new ErrorResponse(`Review not found with the id of ${req.params.id}`, 404));
     }
 
     // Make sure review belongs to user or user is admin
@@ -80,7 +80,7 @@ export const deleteReview = asyncHandler(async (req, res, next) => {
     const review = await Review.findById(req.params.id);
 
     if (!review) {
-        return next(new ErrorResponse(`No review with the id of ${req.params.id}`, 404));
+        return next(new ErrorResponse(`Review not found with the id of ${req.params.id}`, 404));
     }
 
     // Make sure review belongs to user or user is admin

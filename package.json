@@ -6,7 +6,8 @@
   "type": "module",
   "scripts": {
     "start": "NODE_ENV=production node server",
-    "dev": "nodemon -L server"
+    "dev": "nodemon -L server",
+    "test": "cross-env NODE_OPTIONS=--experimental-vm-modules jest --watchAll --verbose --coverage"
   },
   "author": "Daniel Ruiz",
   "license": "MIT",
@@ -39,6 +40,9 @@
     "xss-clean": "^0.1.1"
   },
   "devDependencies": {
-    "nodemon": "^2.0.19"
+    "cross-env": "^7.0.3",
+    "jest": "^28.1.3",
+    "nodemon": "^2.0.19",
+    "supertest": "^6.2.4"
   }
 }

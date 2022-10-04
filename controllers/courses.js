@@ -28,7 +28,7 @@ export const getCourse = asyncHandler(async (req, res, next) => {
     });
 
     if (!course) {
-        return next(new ErrorResponse(`No course with the id of ${req.params.id}`), 404);
+        return next(new ErrorResponse(`Course not found with the id of ${req.params.id}`, 404));
     }
 
     res.status(200).json({ success: true, data: course });
@@ -45,7 +45,7 @@ export const addCourse = asyncHandler(async (req, res, next) => {
     const diveCenter = await DiveCenter.findById(req.params.diveCenterId);
 
     if (!diveCenter) {
-        return next(new ErrorResponse(`No diveCenter with the id of ${req.params.diveCenterId}`), 404);
+        return next(new ErrorResponse(`DiveCenter not found with the id of ${req.params.diveCenterId}`, 404));
     }
 
     // Make sure user is diveCenter owner
@@ -67,7 +67,7 @@ export const updateCourse = asyncHandler(async (req, res, next) => {
     let course = await Course.findById(req.params.id);
 
     if (!course) {
-        return next(new ErrorResponse(`No course with the id of ${req.params.id}`), 404);
+        return next(new ErrorResponse(`Course not found with the id of ${req.params.id}`, 404));
     }
 
     // Make sure user is course owner
@@ -89,7 +89,7 @@ export const deleteCourse = asyncHandler(async (req, res, next) => {
     const course = await Course.findById(req.params.id);
 
     if (!course) {
-        return next(new ErrorResponse(`No course with the id of ${req.params.id}`), 404);
+        return next(new ErrorResponse(`Course not found with the id of ${req.params.id}`, 404));
     }
 
     // Make sure user is course owner

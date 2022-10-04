@@ -42,7 +42,7 @@ export const errorHandler = (err, req, res, next) => {
         logger.error({ level: 'error', message: error.message || 'Internal Server Error', detail });
     }
 
-    res.status(error.statusCode || 500).json({ sucess: false, error: error.message || 'Internal Server Error' });
+    res.status(error.statusCode || 500).json({ success: false, error: error.message || 'Internal Server Error' });
 }
 
 export const unhandledErrorHandler = async (err, promise) => {
